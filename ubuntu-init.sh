@@ -1,10 +1,16 @@
+#!/bin/bash
+
 # execute chmod on this file first
 
+#Update repositories
 sudo apt update -y
 sudo apt upgrade -y
 
-# install vim if possible
+# install vim if necessary
 sudo apt install vim
+
+# install tmux 
+sudo apt install tmux -y
 
 # install docker -- https://docs.docker.com/engine/install/debian/
 sudo apt remove docker docker-engine docker.io containerd runc
