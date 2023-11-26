@@ -17,12 +17,20 @@ then
     sudo apt install gh -y
 fi
 
-# install vim if necessary
-ln -rsf ./.vimrc ~/.vimrc
-if ! command -v vim &> /dev/null
+# install neovim if necessary
+
+if ! command -v nvim &> /dev/null
 then
-    sudo apt install vim -y
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    ./nvim.appimage
 fi
+
+mv ~/.config/nvim ~/.config/nvim.backup
+rm -rf ~/.local/share/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+
 
 # install tmux 
 if ! command -v tmux &> /dev/null
