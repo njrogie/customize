@@ -12,6 +12,11 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 sudo apt update -y
 sudo apt upgrade -y
 
+if ! command -v unzip &> /dev/null
+then
+    sudo apt install unzip -y
+fi
+
 if ! command -v gh &> /dev/null
 then
     sudo apt install gh -y
