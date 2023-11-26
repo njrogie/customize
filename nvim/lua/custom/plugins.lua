@@ -1,5 +1,8 @@
 local plugins = {
   {
+    "Civitasv/cmake-tools.nvim"
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function() 
       require "plugins.configs.lspconfig"

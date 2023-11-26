@@ -34,8 +34,10 @@ fi
 mv ~/.config/nvim ~/.config/nvim.backup
 rm -rf ~/.local/share/nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-
-
+cp -r ./nvim/lua/custom/* ~/.config/nvim/lua/custom/
+# Don't forget to use MasonInstallAll & TSInstall cpp
+nvim --headless +MasonInstallAll +q
+nvim --headless +TSInstall\ cpp +q
 
 # install tmux 
 if ! command -v tmux &> /dev/null
