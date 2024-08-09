@@ -47,6 +47,8 @@ fi
 
 # c++ build
 sudo apt install build-essential
+# SSL
+sudo apt install libssl-dev
 
 # install docker -- https://docs.docker.com/engine/install/debian/
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
@@ -64,6 +66,15 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Add CMake
+wget https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2.tar.gz
+tar -xzvf cmake-3.30.2.tar.gz
+cd cmake-3.30.2
+./configure
+make -j8
+sudo make install
+
 
 # Login to github
 gh auth login
