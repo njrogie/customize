@@ -1,0 +1,12 @@
+[window]
+dimensions = { columns = 80, lines = 120 } 
+padding = {x = 10, y = 10}
+opacity = 0.8
+blur = true
+startup_mode = "Maximized"
+
+[font]
+normal = {family = "JetBrainsMonoNerdFont", style = "Regular" } 
+
+[colors]
+primary = { foreground = "#97a9f7", background = "#302330", dim_foreground = "#7c8bcc", bright_foreground = "#c4cdf5"}
