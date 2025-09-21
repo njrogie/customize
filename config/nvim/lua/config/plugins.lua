@@ -17,3 +17,15 @@ local tree_api = require('nvim-tree.api')
 
 set_normal_keymap('to', tree_api.tree.open, 'NvimTreeOpen')
 set_normal_keymap('tc', tree_api.tree.close, 'NvimTreeClose')
+
+-- cmp config
+
+-- LSP configs
+vim.lsp.config('luals', {
+    cmd = { '/home/njrogie/Code/lsp/lua-language-server/bin/lua-language-server' },
+    filetypes = { 'lua' },
+    capabilities = require('blink.cmp').get_lsp_capabilities()
+})
+
+
+vim.lsp.enable('luals')

@@ -22,6 +22,6 @@ require('lazy').setup({
     spec = {
         { import = 'plugins' }
     },
-    install = {colorscheme = {"nordfox"}},
+    install = { colorscheme = {"nordfox"}   },
     checker = { enabled = true },
 })
